@@ -1,17 +1,19 @@
-﻿# BÃ¡o cÃ¡o BÃ i 1: KhÃ´i phá»¥c commit Ä‘Ã£ máº¥t báº±ng Git Reflog
+﻿# Báo cáo Bài 1: Khôi phục commit đã mất bằng Git Reflog
 
-## CÃ¡c bÆ°á»›c thá»±c hiá»‡n
-1. Táº¡o file `feature.txt` vá»›i ná»™i dung `Day la tinh nang quan trong`.
-2. Commit thay Ä‘á»•i: `git add .` vÃ  `git commit -m "Them tinh nang quan trong"`.
-3. Giáº£ láº­p lá»—i báº±ng cÃ¡ch lÃ¹i commit vÃ  xÃ³a sáº¡ch working directory:
+## Các bước thực hiện
+1. Tạo file `feature.txt` với nội dung `Day la tinh nang quan trong`.
+2. Commit thay đổi: `git add .` và `git commit -m "Them tinh nang quan trong"`.
+3. Giả lập lỗi bằng cách lùi commit và xóa sạch working directory:
    `git reset --hard HEAD~1`
-4. Xem nháº­t kÃ½ tham chiáº¿u Reflog Ä‘á»ƒ tÃ¬m mÃ£ hash cá»§a commit vá»«a bá»‹ xÃ³a:
+4. Xem nhật ký tham chiếu Reflog để tìm mã hash của commit vừa bị xóa:
    `git reflog`
-   TÃ¬m tháº¥y hash cá»§a commit (vÃ­ dá»¥: `12377513a45f9880c7149b11b6c0ed68b3490154`).
-5. KhÃ´i phá»¥c láº¡i commit Ä‘Ã³:
-   `git reset --hard 12377513a45f9880c7149b11b6c0ed68b3490154`
+   Tìm thấy hash của commit (ví dụ: 952d3b065089a77bbd984106b9ea8fb74e0fe881).
+5. Khôi phục lại commit đó:
+   `git reset --hard 952d3b065089a77bbd984106b9ea8fb74e0fe881`
 
-## Lá»‹ch sá»­ commit sau khi khÃ´i phá»¥c
+## Lịch sử commit sau khi khôi phục
 ```
+952d3b0 Initial commit
+fa98192 Add report
 1237751 Them tinh nang quan trong
 ```
